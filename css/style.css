@@ -1,0 +1,87 @@
+
+:root {
+  /* Raw palette */
+  --abyssal-forest:   #0B1F1A;
+  --midnight-teal:    #1B3B4D;
+  --ancient-bark:     #4B3C27;
+  --weathered-bronze: #8B5B29;
+  --moonlit-moss:     #A9C9B0;
+  --parchment:        #E6D8C8;
+
+  /* Semantic aliases — use THESE in your CSS, not the raw names.
+     If you ever want to retheme, you only change this block. */
+  --bg:         var(--abyssal-forest);
+  --surface:    var(--midnight-teal);
+  --border:     var(--ancient-bark);
+  --accent:     var(--weathered-bronze);
+  --text:       var(--parchment);
+  --text-muted: var(--moonlit-moss);
+  --glow:       var(--moonlit-moss);
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', monospace;
+
+  /* Spacing scale */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+}
+
+/* ---------- 2. RESET ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 3. BASE ---------- */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-3);
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    circle at 50% 40%,
+    rgba(27, 59, 77, 0.55) 0%,
+    rgba(11, 31, 26, 1) 70%
+  );
+  color: var(--text);
+  font-family: var(--font-pixel);
+  text-align: center;
+}
+
+/* ---------- 4. TYPOGRAPHY ---------- */
+h1 {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--text-muted);
+  text-shadow:
+    0 0 6px var(--glow),
+    0 0 18px rgba(169, 201, 176, 0.4);
+  animation: flicker 4s infinite;
+}
+
+p {
+  margin-top: var(--space-3);
+  font-size: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ---------- 5. ANIMATIONS ---------- */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  48%      { opacity: 1; }
+  50%      { opacity: 0.75; }
+  52%      { opacity: 1; }
+  80%      { opacity: 0.9; }
+}
+
+/* ---------- 6. RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  h1 { font-size: 0.8rem; }
+}

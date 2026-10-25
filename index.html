@@ -6,64 +6,10 @@
   <title>The Shrine — Under Construction</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --abyssal-forest: #0B1F1A;
-      --midnight-teal:  #1B3B4D;
-      --ancient-bark:   #4B3C27;
-      --weathered-bronze:#8B5B29;
-      --moonlit-moss:   #A9C9B0;
-      --parchment:      #E6D8C8;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: var(--abyssal-forest);
-      color: var(--parchment);
-      font-family: 'Press Start 2P', monospace;
-      text-align: center;
-      padding: 2rem;
-      /* A faint vignette to make the center feel like it's glowing */
-      background-image: radial-gradient(
-        circle at 50% 40%,
-        rgba(27, 59, 77, 0.55) 0%,
-        rgba(11, 31, 26, 1) 70%
-      );
-    }
-
-    h1 {
-      font-size: 1.1rem;
-      line-height: 2;
-      color: var(--moonlit-moss);
-      text-shadow: 0 0 6px var(--moonlit-moss), 0 0 18px rgba(169, 201, 176, 0.4);
-      animation: flicker 4s infinite;
-    }
-
-    p {
-      margin-top: 1.8rem;
-      font-size: 0.6rem;
-      color: var(--weathered-bronze);
-      letter-spacing: 1px;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      48%      { opacity: 1; }
-      50%      { opacity: 0.75; }
-      52%      { opacity: 1; }
-      80%      { opacity: 0.9; }
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 0.8rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <main>
