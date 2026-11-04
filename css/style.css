@@ -98,14 +98,24 @@ main { position: relative; z-index: 1; }
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 45%;
+  height: 58%;
   z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgba(11, 31, 26, 0.98) 0%,
-    rgba(11, 31, 26, 0.55) 45%,
-    transparent 100%
-  );
+  pointer-events: none;
+  background:
+    /* moonlit haze — faint teal that reads as mist */
+    radial-gradient(
+      ellipse 90% 65% at 62% 100%,
+      rgba(27, 59, 77, 0.45) 0%,
+      rgba(27, 59, 77, 0.15) 55%,
+      transparent 85%
+    ),
+    /* ground fade — darkens the bottom and eats the moon's lower edge */
+    linear-gradient(
+      to top,
+      rgba(11, 31, 26, 1.00) 0%,
+      rgba(11, 31, 26, 0.65) 38%,
+      transparent           92%
+    );
 }
 
 /* ---------- The Moon ---------- */
