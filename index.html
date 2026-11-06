@@ -15,54 +15,93 @@
 <body>
   <div class="stars" aria-hidden="true"></div>
 
-  <main>
-    <section class="hero">
+ <main>
+  <section class="hero">
 
-      <!-- The scene: moon + lynx (decorative) -->
-      <div class="hero-scene" aria-hidden="true">
-        <div class="moon"></div>
+    <!-- The scene: moon + lynx (decorative) -->
+    <div class="hero-scene" aria-hidden="true">
+      <div class="moon"></div>
 
-        <div class="lynx">
-          <svg viewBox="0 0 200 270" xmlns="http://www.w3.org/2000/svg">
-            <g class="lynx-body">
-              <!-- bobbed tail -->
-              <ellipse cx="172" cy="228" rx="16" ry="20" />
-              <!-- haunch -->
-              <ellipse cx="128" cy="180" rx="50" ry="62" />
-              <!-- chest -->
-              <ellipse cx="95"  cy="150" rx="34" ry="42" />
-              <!-- head -->
-              <ellipse cx="85"  cy="105" rx="33" ry="31" />
-              <!-- ears -->
-              <path d="M60 92 L50 44 L82 76 Z" />
-              <path d="M97 76 L108 40 L120 90 Z" />
-              <!-- lynx ear tufts -->
-              <path d="M50 44 L42 26 L57 43 Z" />
-              <path d="M108 40 L120 26 L114 41 Z" />
-              <!-- front legs -->
-              <rect x="66" y="160" width="24" height="92" rx="12" />
-              <rect x="92" y="170" width="24" height="82" rx="12" />
-            </g>
-            <!-- eyes -->
-            <g class="lynx-eyes">
-              <ellipse cx="72" cy="103" rx="6" ry="4" />
-              <ellipse cx="96" cy="103" rx="6" ry="4" />
-            </g>
-          </svg>
-        </div>
+      <div class="lynx">
+        <svg viewBox="0 0 200 270" xmlns="http://www.w3.org/2000/svg">
+          <g class="lynx-body">
+            <ellipse cx="172" cy="228" rx="16" ry="20" />
+            <ellipse cx="128" cy="180" rx="50" ry="62" />
+            <ellipse cx="95"  cy="150" rx="34" ry="42" />
+            <ellipse cx="85"  cy="105" rx="33" ry="31" />
+            <path d="M60 92 L50 44 L82 76 Z" />
+            <path d="M97 76 L108 40 L120 90 Z" />
+            <path d="M50 44 L42 26 L57 43 Z" />
+            <path d="M108 40 L120 26 L114 41 Z" />
+            <rect x="66" y="160" width="24" height="92" rx="12" />
+            <rect x="92" y="170" width="24" height="82" rx="12" />
+          </g>
+          <g class="lynx-eyes">
+            <ellipse cx="72" cy="103" rx="6" ry="4" />
+            <ellipse cx="96" cy="103" rx="6" ry="4" />
+          </g>
+        </svg>
       </div>
+    </div>
 
-      <!-- The words -->
-      <div class="hero-copy">
-        <p class="hero-eyebrow">Greetings! it's </p>
-        <h1 class="hero-name">Maryam Al Balushi</h1>
-        <p class="hero-tagline">
-          Computer Science graduate.<br>
-          Builder of small worlds and strange software.
-        </p>
+    <!-- The words -->
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Greetings! it's</p>
+      <h1 class="hero-name">Maryam Al Balushi</h1>
+      <p class="hero-tagline">
+        Computer Science graduate.<br>
+        Builder of small worlds and strange software.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- === Player Profile === -->
+  <section class="profile" id="profile">
+    <div class="tale-ornament" aria-hidden="true">✦ ─── ✦</div>
+
+    <p class="section-eyebrow">// Player Profile</p>
+    <h2 class="section-title">The Keeper</h2>
+
+    <p class="profile-intro">
+      Computer Science graduate from Muscat, Oman. I build Android apps,
+      poke at web things, and teach deaf students how to code on the side.
+      I like problems that don't have names yet.
+    </p>
+
+    <div class="profile-grid">
+      <div class="profile-card">
+        <span class="profile-label">Class</span>
+        <span class="profile-value">Software Developer</span>
+        <span class="profile-note">Mobile · Web · AI-curious</span>
       </div>
-
-    </section>
-  </main>
+      <div class="profile-card">
+        <span class="profile-label">Level</span>
+        <span class="profile-value">3.75 / 4.0 GPA</span>
+        <span class="profile-note">BSc Computer Science, Middle East College</span>
+      </div>
+      <div class="profile-card">
+        <span class="profile-label">Base</span>
+        <span class="profile-value">Muscat, Oman</span>
+        <span class="profile-note">GMT+4</span>
+      </div>
+      <div class="profile-card">
+        <span class="profile-label">Languages</span>
+        <span class="profile-value">4 spoken / signed</span>
+        <span class="profile-note">Arabic · English · Hindi · Arabic Sign</span>
+      </div>
+      <div class="profile-card">
+        <span class="profile-label">Loadout</span>
+        <span class="profile-value">Kotlin · Java · Angular</span>
+        <span class="profile-note">+ Python, C#, SQL, Power BI, HTML/CSS</span>
+      </div>
+      <div class="profile-card">
+        <span class="profile-label">Side Quest</span>
+        <span class="profile-value">Sign Language Interpreter</span>
+        <span class="profile-note">for deaf CS students at Al Buraimi University College</span>
+      </div>
+    </div>
+  </section>
+</main>
 </body>
 </html>
