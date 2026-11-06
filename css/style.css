@@ -98,23 +98,23 @@ main { position: relative; z-index: 1; }
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 58%;
+  height: 55%;
   z-index: 1;
   pointer-events: none;
   background:
-    /* moonlit haze — faint teal that reads as mist */
-    radial-gradient(
-      ellipse 90% 65% at 62% 100%,
-      rgba(27, 59, 77, 0.45) 0%,
-      rgba(27, 59, 77, 0.15) 55%,
-      transparent 85%
-    ),
-    /* ground fade — darkens the bottom and eats the moon's lower edge */
+    /* pale moss mist — brighter than the ground, so it actually reads */
     linear-gradient(
       to top,
-      rgba(11, 31, 26, 1.00) 0%,
-      rgba(11, 31, 26, 0.65) 38%,
-      transparent           92%
+      rgba(169, 201, 176, 0.24) 0%,
+      rgba(169, 201, 176, 0.12) 28%,
+      rgba(169, 201, 176, 0.04) 55%,
+      transparent 82%
+    ),
+    /* a second, softer wisp higher up on the left */
+    radial-gradient(
+      ellipse 60% 40% at 25% 95%,
+      rgba(169, 201, 176, 0.10) 0%,
+      transparent 70%
     );
 }
 
