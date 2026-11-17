@@ -3,80 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Last train — Maryam Al Balushi</title>
-  <meta name="description" content="Maryam Al Balushi, a computer science graduate in Muscat. A short ride: who she is, what she built, what she knows, and where to find her." />
-  <meta name="theme-color" content="#0C1220" />
-  <link rel="icon" href="assets/cat-portrait.jpg" type="image/jpeg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>Maryam Al Balushi</title>
+  <meta name="description" content="Maryam Al Balushi, a computer science graduate in Muscat. Slide up on the lock screen, then open Notes, Work, Skills, or Safari." />
+  <meta name="theme-color" content="#16375f" />
   <link rel="stylesheet" href="css/style.css" />
-  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <div class="stage">
-    <header class="topbar">
-      <p class="route">Last train</p>
-      <p class="rider">Maryam Al Balushi</p>
-    </header>
-    <div class="board">
-      <section class="window" aria-label="Train window">
-        <img class="window-art" src="assets/train-night.jpg" alt="An empty night train. Dark seats, and a wide window full of clouded sky." />
-        <div class="moon" aria-hidden="true"></div>
-      </section>
-      <div class="chapters" aria-live="polite">
-        <article class="panel panel-who" id="panel-who">
-          <p class="kicker">Who</p>
-          <h1>Maryam Al Balushi</h1>
-          <p>Computer science graduate in Muscat, Oman.</p>
-          <dl class="facts">
-            <div><dt>Degree</dt><dd>BSc Computer Science, Middle East College</dd></div>
-            <div><dt>GPA</dt><dd>3.75 / 4.0</dd></div>
-            <div><dt>Languages</dt><dd>Arabic, English, Hindi, Arabic Sign Language</dd></div>
-          </dl>
-          <p>She interprets for deaf computer science students at Al Buraimi University College, and she teaches them to code. She builds Android apps, and smaller things for the web.</p>
-        </article>
-        <article class="panel panel-made" id="panel-made">
-          <p class="kicker">Made</p>
-          <h2>Sign-Pal</h2>
-          <p>An Android app that translates Arabic sign language. A YOLOv8 model watches the hands and answers in words.</p>
-          <p><a href="https://github.com/MaryMec/Sign-Pal">MaryMec/Sign-Pal</a></p>
-          <p>The rest of her public code is on the same GitHub. <a href="https://github.com/MaryMec">MaryMec</a></p>
-        </article>
-        <article class="panel panel-knows" id="panel-knows">
-          <p class="kicker">Knows</p>
-          <h2>What she carries</h2>
-          <p>Mobile, web, and the tools around them.</p>
+  <div class="desk">
+    <div class="phone">
+      <div class="screen">
+        <section class="view view-lock" id="lock" data-view="lock" tabindex="-1" aria-label="Lock screen">
+          <div class="wallpaper" aria-hidden="true"></div>
+          <div class="lock-copy">
+            <p class="lock-date" id="lock-date"></p>
+            <p class="lock-clock">
+              <span class="lock-hm" data-clock-hm></span>
+              <span class="lock-meridiem" data-clock-meridiem></span>
+            </p>
+            <h1 class="lock-name">Maryam Al Balushi</h1>
+            <p class="place">Computer science · Muscat</p>
+          </div>
+          <div class="notices">
+            <button type="button" class="notice" data-open="notes">
+              <span class="notice-mark notice-mark-notes" aria-hidden="true"></span>
+              <span class="notice-copy">
+                <span class="notice-kicker">Notes</span>
+                <span class="notice-text">Middle East College · 3.75 GPA</span>
+              </span>
+            </button>
+            <button type="button" class="notice" data-open="work">
+              <span class="notice-mark notice-mark-work" aria-hidden="true"></span>
+              <span class="notice-copy">
+                <span class="notice-kicker">Work</span>
+                <span class="notice-text">Sign-Pal · Arabic sign language</span>
+              </span>
+            </button>
+          </div>
+          <button type="button" id="lock-hint" data-go="home">Slide up to open</button>
+          <button type="button" class="home-bar" data-go="home" aria-label="Open"></button>
+        </section>
+
+        <section class="view view-home" id="home" data-view="home" tabindex="-1" aria-label="Home screen" hidden>
+          <div class="wallpaper" aria-hidden="true"></div>
+          <div class="app-grid">
+            <button type="button" class="app" data-open="notes">
+              <span class="squircle squircle-notes" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <rect x="8" y="4" width="16" height="24" rx="2.5" fill="#fff" />
+                  <path d="M12 12h8M12 16.5h8M12 21h5" fill="none" stroke="#d4a200" stroke-width="1.7" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="app-label">Notes</span>
+            </button>
+            <button type="button" class="app" data-open="work">
+              <span class="squircle squircle-work" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <rect x="5.5" y="13" width="21" height="13" rx="2.2" fill="#fff" />
+                  <path d="M12 13v-1.7a4 4 0 0 1 8 0V13" fill="none" stroke="#fff" stroke-width="2" />
+                  <rect x="14.2" y="17.4" width="3.6" height="3.2" rx="0.6" fill="#0a84ff" />
+                </svg>
+              </span>
+              <span class="app-label">Work</span>
+            </button>
+            <button type="button" class="app" data-open="skills">
+              <span class="squircle squircle-skills" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <rect x="7" y="17" width="4.2" height="9" rx="1.1" fill="#fff" />
+                  <rect x="13.9" y="12" width="4.2" height="14" rx="1.1" fill="#fff" />
+                  <rect x="20.8" y="7" width="4.2" height="19" rx="1.1" fill="#fff" />
+                </svg>
+              </span>
+              <span class="app-label">Skills</span>
+            </button>
+            <button type="button" class="app" data-open="safari">
+              <span class="squircle squircle-safari" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <circle cx="16" cy="16" r="10.5" fill="none" stroke="#007aff" stroke-width="1.6" />
+                  <circle cx="16" cy="16" r="1.25" fill="#007aff" />
+                  <path d="M16 7.1 17.35 15.1 16 14.15 14.65 15.1Z" fill="#ff3b30" />
+                  <path d="M16 24.9 14.65 16.9 16 17.85 17.35 16.9Z" fill="#32ade6" />
+                </svg>
+              </span>
+              <span class="app-label">Safari</span>
+            </button>
+          </div>
+          <button type="button" class="home-bar" data-go="lock" aria-label="Lock screen"></button>
+        </section>
+
+        <section class="view view-app" id="notes" data-view="notes" tabindex="-1" aria-label="Notes" hidden>
+          <button type="button" class="back" data-go="home">Home</button>
+          <h2 class="app-title">Notes</h2>
+          <div class="card">
+            <button type="button" class="row" data-open="about">
+              <span class="row-main">
+                <span class="row-title">About</span>
+                <span class="row-detail">Muscat graduate</span>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section class="view view-app" id="about" data-view="about" tabindex="-1" aria-label="About" hidden>
+          <button type="button" class="back" data-go="notes">Notes</button>
+          <h2 class="app-title">About</h2>
+          <div class="card prose">
+            <p>Computer science graduate in Muscat.</p>
+            <p>BSc Computer Science, Middle East College. GPA 3.75 / 4.0.</p>
+            <p>Android apps, web, interpret and teach at Al Buraimi University College.</p>
+            <p>Languages: Arabic, English, Hindi, Arabic Sign Language.</p>
+          </div>
+        </section>
+
+        <section class="view view-app" id="work" data-view="work" tabindex="-1" aria-label="Work" hidden>
+          <button type="button" class="back" data-go="home">Home</button>
+          <h2 class="app-title">Work</h2>
+          <div class="card">
+            <button type="button" class="row" data-open="signpal">
+              <span class="row-main">
+                <span class="row-title">Sign-Pal</span>
+                <span class="row-detail">Arabic sign language</span>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section class="view view-app" id="signpal" data-view="signpal" tabindex="-1" aria-label="Sign-Pal" hidden>
+          <button type="button" class="back" data-go="work">Work</button>
+          <h2 class="app-title">Sign-Pal</h2>
+          <div class="card prose">
+            <p>An Android app that translates Arabic sign language. A YOLOv8 model watches the hands and answers in words.</p>
+            <p><a href="https://github.com/MaryMec/Sign-Pal">https://github.com/MaryMec/Sign-Pal</a></p>
+          </div>
+        </section>
+
+        <section class="view view-app" id="skills" data-view="skills" tabindex="-1" aria-label="Skills" hidden>
+          <button type="button" class="back" data-go="home">Home</button>
+          <h2 class="app-title">Skills</h2>
           <ul class="skills">
-            <li>Kotlin</li><li>Java</li><li>Angular</li><li>Python</li><li>C#</li><li>SQL</li><li>Power BI</li><li>HTML and CSS</li>
+            <li>Kotlin</li>
+            <li>Java</li>
+            <li>Angular</li>
+            <li>Python</li>
+            <li>C#</li>
+            <li>SQL</li>
+            <li>Power BI</li>
+            <li>HTML and CSS</li>
           </ul>
-        </article>
-        <article class="panel panel-find" id="panel-find">
-          <p class="kicker">Find</p>
-          <h2>Where she leaves the door</h2>
-          <p>Her work sits in the open, under her name.</p>
-          <p><a href="https://github.com/MaryMec">github.com/MaryMec</a></p>
-        </article>
+        </section>
+
+        <section class="view view-app" id="safari" data-view="safari" tabindex="-1" aria-label="Safari" hidden>
+          <button type="button" class="back" data-go="home">Home</button>
+          <h2 class="app-title">Safari</h2>
+          <p class="address">github.com/MaryMec</p>
+          <div class="card">
+            <a class="link" href="https://github.com/MaryMec">Open GitHub</a>
+            <a class="link" href="https://github.com/MaryMec/Sign-Pal">Sign-Pal repository</a>
+          </div>
+        </section>
+
+        <div class="status">
+          <span class="status-time" data-clock-hm></span>
+          <span class="status-icons" aria-hidden="true">
+            <svg class="glyph" viewBox="0 0 17 12">
+              <rect x="0" y="8" width="3" height="4" rx="0.6" fill="currentColor" />
+              <rect x="4.6" y="5.2" width="3" height="6.8" rx="0.6" fill="currentColor" />
+              <rect x="9.2" y="2.6" width="3" height="9.4" rx="0.6" fill="currentColor" />
+              <rect x="13.8" y="0" width="3" height="12" rx="0.6" fill="currentColor" />
+            </svg>
+            <svg class="glyph" viewBox="0 0 16 12">
+              <path fill="currentColor" d="M8 9.15a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z" />
+              <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M4.05 7.15a5.5 5.5 0 0 1 7.9 0" />
+              <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M1.45 4.5a9.1 9.1 0 0 1 13.1 0" />
+            </svg>
+            <svg class="glyph glyph-battery" viewBox="0 0 28 13">
+              <rect x="0.7" y="0.7" width="23" height="11.6" rx="3" fill="none" stroke="currentColor" stroke-width="1.3" />
+              <rect x="2.3" y="2.3" width="16.6" height="8.4" rx="1.4" fill="currentColor" />
+              <path fill="currentColor" d="M25.1 4.15h1.15c.7 0 1.25.55 1.25 1.25v2.2c0 .7-.55 1.25-1.25 1.25H25.1V4.15z" />
+            </svg>
+          </span>
+        </div>
+        <div class="island" aria-hidden="true"></div>
       </div>
     </div>
-    <section class="dialogue" aria-label="The cat in the opposite seat">
-      <img class="portrait" src="assets/cat-portrait.jpg" alt="" />
-      <div class="speech">
-        <p class="speaker">Cat</p>
-        <p class="line line-static line-who">She got on in Muscat. The moon already knew her name.</p>
-        <p class="line line-static line-made">One stop, she taught a phone to read hands.</p>
-        <p class="line line-static line-knows">She travels light. The bag is still heavy.</p>
-        <p class="line line-static line-find">If you are looking for her, she left the door on GitHub open.</p>
-        <p class="line line-live" id="line"></p>
-      </div>
-    </section>
-    <nav class="choices" aria-label="Chapters">
-      <label class="choice"><input type="radio" name="chapter" id="ch-who" value="who" checked data-line="She got on in Muscat. The moon already knew her name." /><span>Who</span></label>
-      <label class="choice"><input type="radio" name="chapter" id="ch-made" value="made" data-line="One stop, she taught a phone to read hands." /><span>Made</span></label>
-      <label class="choice"><input type="radio" name="chapter" id="ch-knows" value="knows" data-line="She travels light. The bag is still heavy." /><span>Knows</span></label>
-      <label class="choice"><input type="radio" name="chapter" id="ch-find" value="find" data-line="If you are looking for her, she left the door on GitHub open." /><span>Find</span></label>
-    </nav>
   </div>
-  <script src="js/train.js"></script>
+  <script src="js/phone.js"></script>
 </body>
 </html>
