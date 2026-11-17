@@ -3,105 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maryam — Keeper of the Shrine</title>
-  <meta name="description" content="Portfolio of a computer science graduate. Quests, artifacts, and strange software." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+  <title>Last train — Maryam Al Balushi</title>
+  <meta name="description" content="Maryam Al Balushi, a computer science graduate in Muscat. A short ride: who she is, what she built, what she knows, and where to find her." />
+  <meta name="theme-color" content="#0C1220" />
+  <link rel="icon" href="assets/cat-portrait.jpg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
-
- <main>
-  <section class="hero">
-
-    <!-- The scene: moon + lynx (decorative) -->
-    <div class="hero-scene" aria-hidden="true">
-      <div class="moon"></div>
-
-      <div class="lynx">
-        <svg viewBox="0 0 200 270" xmlns="http://www.w3.org/2000/svg">
-          <g class="lynx-body">
-            <ellipse cx="172" cy="228" rx="16" ry="20" />
-            <ellipse cx="128" cy="180" rx="50" ry="62" />
-            <ellipse cx="95"  cy="150" rx="34" ry="42" />
-            <ellipse cx="85"  cy="105" rx="33" ry="31" />
-            <path d="M60 92 L50 44 L82 76 Z" />
-            <path d="M97 76 L108 40 L120 90 Z" />
-            <path d="M50 44 L42 26 L57 43 Z" />
-            <path d="M108 40 L120 26 L114 41 Z" />
-            <rect x="66" y="160" width="24" height="92" rx="12" />
-            <rect x="92" y="170" width="24" height="82" rx="12" />
-          </g>
-          <g class="lynx-eyes">
-            <ellipse cx="72" cy="103" rx="6" ry="4" />
-            <ellipse cx="96" cy="103" rx="6" ry="4" />
-          </g>
-        </svg>
+  <div class="stage">
+    <header class="topbar">
+      <p class="route">Last train</p>
+      <p class="rider">Maryam Al Balushi</p>
+    </header>
+    <div class="board">
+      <section class="window" aria-label="Train window">
+        <img class="window-art" src="assets/train-night.jpg" alt="An empty night train. Dark seats, and a wide window full of clouded sky." />
+        <div class="moon" aria-hidden="true"></div>
+      </section>
+      <div class="chapters" aria-live="polite">
+        <article class="panel panel-who" id="panel-who">
+          <p class="kicker">Who</p>
+          <h1>Maryam Al Balushi</h1>
+          <p>Computer science graduate in Muscat, Oman.</p>
+          <dl class="facts">
+            <div><dt>Degree</dt><dd>BSc Computer Science, Middle East College</dd></div>
+            <div><dt>GPA</dt><dd>3.75 / 4.0</dd></div>
+            <div><dt>Languages</dt><dd>Arabic, English, Hindi, Arabic Sign Language</dd></div>
+          </dl>
+          <p>She interprets for deaf computer science students at Al Buraimi University College, and she teaches them to code. She builds Android apps, and smaller things for the web.</p>
+        </article>
+        <article class="panel panel-made" id="panel-made">
+          <p class="kicker">Made</p>
+          <h2>Sign-Pal</h2>
+          <p>An Android app that translates Arabic sign language. A YOLOv8 model watches the hands and answers in words.</p>
+          <p><a href="https://github.com/MaryMec/Sign-Pal">MaryMec/Sign-Pal</a></p>
+          <p>The rest of her public code is on the same GitHub. <a href="https://github.com/MaryMec">MaryMec</a></p>
+        </article>
+        <article class="panel panel-knows" id="panel-knows">
+          <p class="kicker">Knows</p>
+          <h2>What she carries</h2>
+          <p>Mobile, web, and the tools around them.</p>
+          <ul class="skills">
+            <li>Kotlin</li><li>Java</li><li>Angular</li><li>Python</li><li>C#</li><li>SQL</li><li>Power BI</li><li>HTML and CSS</li>
+          </ul>
+        </article>
+        <article class="panel panel-find" id="panel-find">
+          <p class="kicker">Find</p>
+          <h2>Where she leaves the door</h2>
+          <p>Her work sits in the open, under her name.</p>
+          <p><a href="https://github.com/MaryMec">github.com/MaryMec</a></p>
+        </article>
       </div>
     </div>
-
-    <!-- The words -->
-    <div class="hero-copy">
-      <p class="hero-eyebrow">Greetings! it's</p>
-      <h1 class="hero-name">Maryam Al Balushi</h1>
-      <p class="hero-tagline">
-        Computer Science graduate.<br>
-        Builder of small worlds and strange software.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- === Player Profile === -->
-  <section class="profile" id="profile">
-    <div class="tale-ornament" aria-hidden="true">✦ ─── ✦</div>
-
-    <p class="section-eyebrow">// Player Profile</p>
-    <h2 class="section-title">The Keeper</h2>
-
-    <p class="profile-intro">
-      Computer Science graduate from Muscat, Oman. I build Android apps,
-      poke at web things, and teach deaf students how to code on the side.
-      I like problems that don't have names yet.
-    </p>
-
-    <div class="profile-grid">
-      <div class="profile-card">
-        <span class="profile-label">Class</span>
-        <span class="profile-value">Software Developer</span>
-        <span class="profile-note">Mobile · Web · AI-curious</span>
+    <section class="dialogue" aria-label="The cat in the opposite seat">
+      <img class="portrait" src="assets/cat-portrait.jpg" alt="" />
+      <div class="speech">
+        <p class="speaker">Cat</p>
+        <p class="line line-static line-who">She got on in Muscat. The moon already knew her name.</p>
+        <p class="line line-static line-made">One stop, she taught a phone to read hands.</p>
+        <p class="line line-static line-knows">She travels light. The bag is still heavy.</p>
+        <p class="line line-static line-find">If you are looking for her, she left the door on GitHub open.</p>
+        <p class="line line-live" id="line"></p>
       </div>
-      <div class="profile-card">
-        <span class="profile-label">Level</span>
-        <span class="profile-value">3.75 / 4.0 GPA</span>
-        <span class="profile-note">BSc Computer Science, Middle East College</span>
-      </div>
-      <div class="profile-card">
-        <span class="profile-label">Base</span>
-        <span class="profile-value">Muscat, Oman</span>
-        <span class="profile-note">GMT+4</span>
-      </div>
-      <div class="profile-card">
-        <span class="profile-label">Languages</span>
-        <span class="profile-value">4 spoken / signed</span>
-        <span class="profile-note">Arabic · English · Hindi · Arabic Sign</span>
-      </div>
-      <div class="profile-card">
-        <span class="profile-label">Loadout</span>
-        <span class="profile-value">Kotlin · Java · Angular</span>
-        <span class="profile-note">+ Python, C#, SQL, Power BI, HTML/CSS</span>
-      </div>
-      <div class="profile-card">
-        <span class="profile-label">Side Quest</span>
-        <span class="profile-value">Sign Language Interpreter</span>
-        <span class="profile-note">for deaf CS students at Al Buraimi University College</span>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
+    <nav class="choices" aria-label="Chapters">
+      <label class="choice"><input type="radio" name="chapter" id="ch-who" value="who" checked data-line="She got on in Muscat. The moon already knew her name." /><span>Who</span></label>
+      <label class="choice"><input type="radio" name="chapter" id="ch-made" value="made" data-line="One stop, she taught a phone to read hands." /><span>Made</span></label>
+      <label class="choice"><input type="radio" name="chapter" id="ch-knows" value="knows" data-line="She travels light. The bag is still heavy." /><span>Knows</span></label>
+      <label class="choice"><input type="radio" name="chapter" id="ch-find" value="find" data-line="If you are looking for her, she left the door on GitHub open." /><span>Find</span></label>
+    </nav>
+  </div>
+  <script src="js/train.js"></script>
 </body>
 </html>

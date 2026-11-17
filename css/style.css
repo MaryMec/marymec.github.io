@@ -1,323 +1,494 @@
-/* ============================================================
-   THE MOONLIT LYNX — Portfolio Stylesheet
-   Phase 3: The Shrine Entrance
-   ============================================================ */
-
 :root {
-  /* Raw palette */
-  --abyssal-forest:   #0B1F1A;
-  --midnight-teal:    #1B3B4D;
-  --ancient-bark:     #4B3C27;
-  --weathered-bronze: #8B5B29;
-  --moonlit-moss:     #A9C9B0;
-  --parchment:        #E6D8C8;
-
-  /* Semantic aliases — use THESE in your CSS */
-  --bg:         var(--abyssal-forest);
-  --surface:    var(--midnight-teal);
-  --border:     var(--ancient-bark);
-  --accent:     var(--weathered-bronze);
-  --text:       var(--parchment);
-  --text-muted: var(--moonlit-moss);
-  --glow:       var(--moonlit-moss);
-
-  --font-pixel: 'Press Start 2P', monospace;
-
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 2rem;
-  --space-4: 4rem;
+  --navy: #0c1220;
+  --window: #1c3144;
+  --paper: #f3e6d4;
+  --ink: #1a140f;
+  --crimson: #8c3a3a;
+  --cream: #f3e6d4;
+  --panel: #121a2b;
+  --kicker: #e7b4b4;
+  --serif: "Source Serif 4", "Iowan Old Style", Palatino, Georgia, serif;
+  --gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
 }
 
-/* ---------- Reset ---------- */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* ---------- Base ---------- */
-html { scroll-behavior: smooth; }
+html {
+  height: 100%;
+}
 
 body {
-  min-height: 100vh;
-  background-color: var(--bg);
-  background-image: radial-gradient(
-    ellipse at 62% 28%,
-    rgba(27, 59, 77, 0.55) 0%,
-    rgba(11, 31, 26, 0.98) 60%,
-    rgba(11, 31, 26, 1) 100%
-  );
-  background-attachment: fixed;
-  color: var(--text);
-  font-family: var(--font-pixel);
-  line-height: 1.8;
-  overflow-x: hidden;
+  margin: 0;
+  min-height: 100%;
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--gothic);
+  font-weight: 400;
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
-main { position: relative; z-index: 1; }
-
-/* ---------- Star field ---------- */
-.stars {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(1.5px 1.5px at 12% 18%, rgba(230,216,200,.55), transparent 100%),
-    radial-gradient(1px 1px at 28% 42%, rgba(169,201,176,.45), transparent 100%),
-    radial-gradient(1.5px 1.5px at 47% 12%, rgba(230,216,200,.35), transparent 100%),
-    radial-gradient(1px 1px at 63% 28%, rgba(169,201,176,.50), transparent 100%),
-    radial-gradient(1.5px 1.5px at 78% 8%,  rgba(230,216,200,.40), transparent 100%),
-    radial-gradient(1px 1px at 88% 36%, rgba(169,201,176,.30), transparent 100%),
-    radial-gradient(1px 1px at 18% 68%, rgba(230,216,200,.25), transparent 100%),
-    radial-gradient(1.5px 1.5px at 52% 78%, rgba(169,201,176,.20), transparent 100%);
-  animation: twinkle 8s ease-in-out infinite alternate;
+h1,
+h2,
+.line {
+  font-family: var(--serif);
 }
 
-@keyframes twinkle {
-  from { opacity: 0.55; }
-  to   { opacity: 1; }
+a {
+  color: var(--cream);
+  text-underline-offset: 0.18em;
 }
 
-/* ---------- Hero ---------- */
-.hero {
-  position: relative;
-  min-height: 100vh;
+a:visited {
+  color: var(--cream);
+}
+
+a:hover {
+  color: var(--cream);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+.stage {
+  width: min(1120px, calc(100% - 2rem));
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.25rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.15rem 0.1rem 0.45rem;
+  border-bottom: 1px solid rgba(243, 230, 212, 0.16);
+}
+
+.route,
+.rider {
+  margin: 0;
+  font-family: var(--gothic);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.route {
+  color: var(--crimson);
+  font-weight: 700;
+}
+
+.rider {
+  color: var(--cream);
+  font-weight: 500;
+  text-align: right;
+}
+
+.board {
   display: grid;
-  align-items: center;
-  padding: clamp(3rem, 8vh, 6rem) clamp(1.5rem, 7vw, 7rem);
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+.window {
+  position: relative;
+  min-height: 420px;
+  background: var(--window);
   overflow: hidden;
 }
 
-.hero-scene {
+.window-art {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  display: block;
 }
 
-/* The ground fog — sits above the moon, below the lynx */
-.hero-scene::before {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 55%;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    /* pale moss mist — brighter than the ground, so it actually reads */
-    linear-gradient(
-      to top,
-      rgba(169, 201, 176, 0.24) 0%,
-      rgba(169, 201, 176, 0.12) 28%,
-      rgba(169, 201, 176, 0.04) 55%,
-      transparent 82%
-    ),
-    /* a second, softer wisp higher up on the left */
-    radial-gradient(
-      ellipse 60% 40% at 25% 95%,
-      rgba(169, 201, 176, 0.10) 0%,
-      transparent 70%
-    );
-}
-
-/* ---------- The Moon ---------- */
 .moon {
   position: absolute;
-  top: 12%;
-  right: 6%;
-  z-index: 0;
-  width: clamp(240px, 32vw, 440px);
-  aspect-ratio: 1;
+  top: 16%;
+  left: 58%;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 32%,
-    #EAF4E5 0%,
-    #CFE4CB 30%,
-    #9CC4A3 62%,
-    #5F8F76 88%,
-    #3E6A58 100%
-  );
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 36% 34%, #ffffff 0%, #f6f3ec 46%, #e3dcd0 74%, #c9c0b2 100%);
   box-shadow:
-    0 0 40px  rgba(169, 201, 176, 0.40),
-    0 0 110px rgba(169, 201, 176, 0.22),
-    0 0 240px rgba(27, 59, 77, 0.55);
-  animation: moon-breathe 9s ease-in-out infinite;
+    0 0 18px 6px rgba(255, 252, 245, 0.28),
+    0 0 48px 14px rgba(186, 206, 230, 0.16);
+  animation: drift 22s ease-in-out infinite;
 }
 
 .moon::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 50%;
+  border-radius: inherit;
   background:
-    radial-gradient(circle at 62% 28%, rgba(70,105,88,.30) 0 7%,  transparent 8%),
-    radial-gradient(circle at 33% 58%, rgba(70,105,88,.22) 0 9%,  transparent 10%),
-    radial-gradient(circle at 72% 68%, rgba(70,105,88,.18) 0 6%,  transparent 7%),
-    radial-gradient(circle at 45% 42%, rgba(70,105,88,.14) 0 4%,  transparent 5%);
+    radial-gradient(circle at 32% 42%, rgba(70, 72, 80, 0.34) 0 8%, transparent 9%),
+    radial-gradient(circle at 64% 60%, rgba(60, 62, 70, 0.38) 0 12%, transparent 13%),
+    radial-gradient(circle at 50% 26%, rgba(80, 82, 90, 0.28) 0 5%, transparent 6%),
+    radial-gradient(circle at 74% 34%, rgba(70, 72, 80, 0.3) 0 6%, transparent 7%),
+    radial-gradient(circle at 42% 72%, rgba(55, 58, 66, 0.28) 0 7%, transparent 8%),
+    radial-gradient(circle at 22% 64%, rgba(90, 90, 98, 0.22) 0 4%, transparent 5%);
+  mix-blend-mode: multiply;
 }
 
-@keyframes moon-breathe {
-  0%, 100% { filter: brightness(1); }
-  50%      { filter: brightness(1.07); }
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -14px);
+  }
 }
 
-/* ---------- The Lynx ---------- */
-.lynx {
-  position: absolute;
-  bottom: 6%;
-  right: 11%;
-  z-index: 2;
-  width: clamp(140px, 16vw, 210px);
-  filter: drop-shadow(0 0 26px rgba(169, 201, 176, 0.14));
+.chapters {
+  align-self: start;
+  display: grid;
+  min-width: 0;
 }
 
-.lynx svg { display: block; width: 100%; height: auto; }
-
-.lynx-body { fill: #050D0A; }
-
-.lynx-eyes {
-  fill: var(--glow);
-  filter:
-    drop-shadow(0 0 5px  rgba(169, 201, 176, 0.95))
-    drop-shadow(0 0 14px rgba(169, 201, 176, 0.60));
+.panel {
+  display: none;
+  align-self: start;
+  background: #121a2b;
+  color: var(--cream);
+  padding: 1.35rem 1.3rem 1.45rem;
+  border: 1px solid rgba(243, 230, 212, 0.08);
 }
 
-/* ---------- Hero Copy ---------- */
-.hero-copy {
-  position: relative;
-  z-index: 3;
-  max-width: 34rem;
-  text-align: left;
-}
-
-.hero-eyebrow {
-  font-size: clamp(0.5rem, 1.1vw, 0.6rem);
-  letter-spacing: 0.28em;
+.kicker {
+  margin: 0 0 0.35rem;
+  color: #e7b4b4;
+  font-family: var(--gothic);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: var(--space-3);
 }
 
-.hero-name {
-  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--text);
-  text-shadow:
-    0 0 18px rgba(169, 201, 176, 0.35),
-    0 0 44px rgba(27, 59, 77, 0.70);
+.panel h1,
+.panel h2 {
+  margin: 0 0 0.7rem;
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.15;
 }
 
-.hero-tagline {
-  margin-top: var(--space-3);
-  font-size: clamp(0.55rem, 1.3vw, 0.68rem);
-  line-height: 2.2;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
+.panel p {
+  margin: 0 0 0.85rem;
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 780px) {
-  .hero {
+.panel p:last-child {
+  margin-bottom: 0;
+}
+
+.facts {
+  margin: 0.15rem 0 1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 6.4rem 1fr;
+  gap: 0.45rem 0.7rem;
+  align-items: baseline;
+}
+
+.facts dt {
+  margin: 0;
+  color: #e7b4b4;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.skills {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skills li {
+  border: 1px solid rgba(243, 230, 212, 0.32);
+  padding: 0.28rem 0.62rem;
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.dialogue {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  background: #f3e6d4;
+  color: var(--ink);
+  padding: 0.9rem 1rem;
+}
+
+.portrait {
+  width: 92px;
+  height: 92px;
+  flex: 0 0 92px;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+.speech {
+  min-width: 0;
+  flex: 1;
+  padding-top: 0.1rem;
+}
+
+.speaker {
+  margin: 0 0 0.28rem;
+  color: var(--crimson);
+  font-family: var(--gothic);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.line {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 400;
+  font-size: 1.22rem;
+  line-height: 1.45;
+  min-height: 1.45em;
+}
+
+.line-live {
+  display: none;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+}
+
+.choice {
+  position: relative;
+  display: flex;
+  min-height: 52px;
+  cursor: pointer;
+}
+
+.choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.choice span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.4rem 0.6rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--gothic);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.choice input:checked + span {
+  background: #8c3a3a;
+  color: var(--paper);
+}
+
+.choice input:focus-visible + span {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+body:has(#ch-who:checked) .panel-made,
+body:has(#ch-who:checked) .panel-knows,
+body:has(#ch-who:checked) .panel-find,
+body:has(#ch-who:checked) .line-made,
+body:has(#ch-who:checked) .line-knows,
+body:has(#ch-who:checked) .line-find {
+  display: none;
+}
+
+body:has(#ch-who:checked) .panel-who {
+  display: block;
+}
+
+body:has(#ch-made:checked) .panel-who,
+body:has(#ch-made:checked) .panel-knows,
+body:has(#ch-made:checked) .panel-find,
+body:has(#ch-made:checked) .line-who,
+body:has(#ch-made:checked) .line-knows,
+body:has(#ch-made:checked) .line-find {
+  display: none;
+}
+
+body:has(#ch-made:checked) .panel-made {
+  display: block;
+}
+
+body:has(#ch-knows:checked) .panel-who,
+body:has(#ch-knows:checked) .panel-made,
+body:has(#ch-knows:checked) .panel-find,
+body:has(#ch-knows:checked) .line-who,
+body:has(#ch-knows:checked) .line-made,
+body:has(#ch-knows:checked) .line-find {
+  display: none;
+}
+
+body:has(#ch-knows:checked) .panel-knows {
+  display: block;
+}
+
+body:has(#ch-find:checked) .panel-who,
+body:has(#ch-find:checked) .panel-made,
+body:has(#ch-find:checked) .panel-knows,
+body:has(#ch-find:checked) .line-who,
+body:has(#ch-find:checked) .line-made,
+body:has(#ch-find:checked) .line-knows {
+  display: none;
+}
+
+body:has(#ch-find:checked) .panel-find {
+  display: block;
+}
+
+.js .line-static {
+  display: none;
+}
+
+.js .line-live {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .stage {
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    padding: 0;
+    gap: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-3);
-    padding: 10vh 1.5rem 5vh;
   }
 
-  .hero-copy { text-align: center; max-width: 100%; }
+  .board {
+    display: contents;
+  }
 
-  .hero-scene {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: 44vh;
-    min-height: 300px;
+  .topbar {
+    order: 1;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .route,
+  .rider {
+    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+  }
+
+  .window {
+    order: 2;
+    height: 34vh;
+    min-height: 200px;
   }
 
   .moon {
-    top: 0;
-    right: 50%;
-    transform: translateX(50%);
-    width: min(62vw, 300px);
+    left: 54%;
+    top: 12%;
+    width: 72px;
+    height: 72px;
   }
 
-  .lynx {
-    right: 50%;
-    transform: translateX(50%);
+  .dialogue {
+    order: 3;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .portrait {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+
+  .line {
+    font-size: 1.08rem;
+  }
+
+  .choices {
+    order: 4;
+    position: sticky;
     bottom: 0;
-    width: min(34vw, 140px);
+    z-index: 3;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    padding: 0.45rem;
+    background: var(--navy);
+  }
+
+  .chapters {
+    order: 5;
+  }
+
+  .panel {
+    padding: 1.1rem 0.95rem 1.4rem;
+  }
+
+  .panel h1,
+  .panel h2 {
+    font-size: 1.7rem;
+  }
+
+  .facts div {
+    grid-template-columns: 5.6rem 1fr;
   }
 }
 
-/* ---------- Player Profile ---------- */
-.profile {
-  position: relative;
-  z-index: 1;
-  max-width: 56rem;
-  margin: 0 auto;
-  padding: var(--space-4) clamp(1.5rem, 7vw, 4rem);
-  text-align: center;
-}
-
-.profile-intro {
-  max-width: 38rem;
-  margin: 0 auto var(--space-4);
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-  line-height: 2;
-  color: var(--text-muted);
-}
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: var(--space-2);
-  text-align: left;
-}
-
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: var(--space-2);
-  background: rgba(27, 59, 77, 0.55);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-
-.profile-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 14px rgba(169, 201, 176, 0.14);
-}
-
-.profile-label {
-  font-family: var(--font-pixel);
-  font-size: 0.5rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.profile-value {
-  font-family: var(--font-pixel);
-  font-size: 0.65rem;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.profile-note {
-  font-family: Georgia, serif;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  opacity: 0.85;
-}
-
-
-/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .stars, .moon { animation: none; }
+  .moon {
+    animation: none;
+  }
 }
